@@ -1,0 +1,50 @@
+<p class="" fxLayoutAlign="center">owlslider works!</p>
+
+<h2  fxLayoutAlign="center"> Dynamic Owl Carsouel</h2>
+<owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let slide of slidesStore">
+      <ng-template carouselSlide [id]="slide.id">
+        <img [src]="slide.src"  [title]="slide.title" />
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+
+<!-- 
+  <div *ngFor="let slide of slidesStore">
+    <img [src]="slide.url"  [title]="slide.title" />
+  </div> -->
+
+  <h2  fxLayoutAlign="center"> Static Owl Carsouel</h2>
+ <div class="flex-container">
+   <div class="container"> 
+    <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+        <div class="slide">
+            <img src="https://wallpapercave.com/wp/wp2634222.jpg">
+        </div>
+    </ng-template>
+    <ng-template carouselSlide>
+        <div class="slide">
+            <img src="https://i.pinimg.com/originals/cb/16/bb/cb16bb284a2a80c75041c80ba63e62d3.jpg">
+        </div>
+    </ng-template>
+    <ng-template carouselSlide>
+        <div class="slide">
+            <img src="https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg">
+        </div>
+    </ng-template>
+    <ng-template carouselSlide>
+        <div class="slide">
+            <img src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752">
+        </div>
+    </ng-template>
+    <ng-template carouselSlide>
+        <div class="slide">
+            <img src="https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2019/07/23090714/nature-1024x682.jpeg">
+        </div>
+    </ng-template>
+    </owl-carousel-o>
+  </div>
+</div> 

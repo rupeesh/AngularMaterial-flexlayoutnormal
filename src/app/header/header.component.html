@@ -1,0 +1,43 @@
+<div class="navigation-wrapper" fxLayout="row" fxLayoutAlign="flex-start center">
+ <div class="left-navigation" fxFlex="0 0 80" fxLayout="row" fxLayoutAlign="flex-start center" fxLayout.xs="column" fxLayoutAlign.xs="flex-start flex-start">
+     <div class="log-section" fxFlex = "0 0 20">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> 
+        <span>Logo</span>
+     </div>
+     <div class="navbar-wrapper" fxFlex = "0 0 80" >
+         <nav class="navbar" >
+            <ul class="navbar-listing" fxLayout="row" fxLayoutGap="20px"   >
+               <li><a  [routerLink]="['/dashboard']" routerLinkActive="active"   >Dashboard</a></li>
+               <li><a  [routerLink]="['/home']" routerLinkActive="active"  [matMenuTriggerFor]="afterMenu">Home</a>
+                <mat-menu #afterMenu="matMenu" xPosition="after">
+                  <button  [routerLink]="['/home/owlslider']"  routerLinkActive="active"  mat-menu-item>Owl Slider</button>
+                  <button [routerLink]="['/home/graphs']"  mat-menu-item>Graphs</button>
+                </mat-menu>
+                </li>
+               <li><a  routerLinkActive="active" >Product</a></li>
+               <li><a  routerLinkActive="active" >Service</a></li>   
+               <li><a [routerLink]="['/login']" routerLinkActive="active" >Login</a></li>   
+            </ul> 
+         </nav>
+     </div>
+ </div>
+ <div class="right-navigation" fxFlex="0 0 20" fxLayoutAlign="end">
+    <a mat-icon-button [matMenuTriggerFor]="menu" class="matmenu-icon" >
+        <mat-icon>more_vert</mat-icon>
+    </a>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onLogout()">
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>setting</mat-icon>
+          <span>Profile</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+ </div>
+</div>
